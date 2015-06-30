@@ -100,3 +100,124 @@ function removeM(string) {
 
 }
 
+
+//===========================================================================//
+                        /* ~~~ # 6 ~~~ */ 
+//===========================================================================//
+
+var myObject = { a: 10, b: 20, c: 30 };
+var mySecondObject = { firstName: 'pork', lastName: 'chops' };
+
+function printObject(obj) {
+
+    for (key in obj) {
+
+        console.log(key + " : " + obj[key])
+    }
+}
+
+
+//===========================================================================//
+                        /* ~~~ # 7 ~~~ */ 
+//===========================================================================//
+
+function vowels(string) {
+
+    var vowels = 'aeiouy'.split('');
+
+    var container = [];
+
+    return string.toLowerCase().split('').filter(function(a){
+
+        return ( vowels.indexOf(a) > - 1 );
+    })
+}
+
+
+
+//===========================================================================//
+                        /* ~~~ # 8 ~~~ */ 
+//===========================================================================//
+
+
+// twins(['a', 'a', 'b', 'b', 'c', 'c'])
+// twins(['a', 'a', 'b', 'c', 'd', 'd'])
+// twins(['a', 'a', 'b', 'z'])
+// twins(['a', 'a', undefined])
+
+function twins(arr) {
+
+
+    if (arr.length % 2 !== 0) {
+
+        return false;
+    }
+
+    for (var i = 0; i < arr.length; i += 2) {
+
+        if ( arr[i] !== arr[i + 1] ) {
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+//===========================================================================//
+                        /* ~~~ # 9 ~~~ */ 
+//===========================================================================//
+
+// or([false, false, true, false])
+// or([false, false, false])
+// or([])
+
+
+function or(arr) {
+
+    if ( arr.length === 0) {
+
+        return false;
+    }
+
+    for (var i = 0; i < arr.length; i++) {
+
+        if ( arr[i] ) {
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+//===========================================================================//
+                        /* ~~~ # 10 ~~~ */ 
+//===========================================================================//
+
+
+// unique(['a', 'b', 'a', 'c', 'd', 'd'])
+// unique(['todd', 'avery', 'maria', 'avery'])
+
+function unique(arr) {
+
+    var uniqueObj = {};
+
+    var uniqueArr = [];
+
+    // Loop thru array
+    for (var i = 0; i < arr.length; i++) {
+        
+        uniqueObj[ arr[i] ] = null;
+    }
+
+    for (key in uniqueObj) {
+
+        uniqueArr.push(key);
+    }
+
+    return uniqueArr;
+}
+
